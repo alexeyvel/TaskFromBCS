@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TaskFromBCS
 {
     interface ITextParserRules
     {
-        public IEnumerable<string> ReadByRules(StreamReader reader);
+        public IEnumerable<string> ReadByRules();
     }
 }
