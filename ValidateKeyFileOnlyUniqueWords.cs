@@ -4,7 +4,10 @@ using System.Linq;
 
 namespace TaskFromBCS
 {
-    class ValidateKeyFileOnlyUniqueWords : IValidate
+    /// <summary>
+    /// Класс проверяющий данный считанные с файла шаблона, на наличие только уникальных слов
+    /// </summary>
+    class ValidateKeyFileOnlyUniqueWords : IValidatePatternFile
     {
         public bool GetValidate(IEnumerable<string> patternWords, IWordComparator comparator)
         {

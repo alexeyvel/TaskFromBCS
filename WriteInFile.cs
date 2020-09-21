@@ -6,6 +6,9 @@ using System.Text;
 
 namespace TaskFromBCS
 {
+    /// <summary>
+    /// Класс сохраняющий данные статистики в файл
+    /// </summary>
     class WriteInFile : IWritable
     {
         private string fileName;

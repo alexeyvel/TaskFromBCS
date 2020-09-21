@@ -2,6 +2,9 @@
 
 namespace TaskFromBCS
 {
+    /// <summary>
+    /// Класс проверяющий два слова на идентичность
+    /// </summary>
     class TwoWordsComparator : IWordComparator
     {
         public bool IgnoreCase { get; set; }
@@ -9,7 +12,7 @@ namespace TaskFromBCS
         {
             IgnoreCase = ignoreCase;
         }
-
+      
         public bool CompareWords(string targetWord, string patternWord)
         {
             if (string.IsNullOrEmpty(targetWord))

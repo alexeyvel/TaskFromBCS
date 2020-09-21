@@ -22,14 +22,21 @@ namespace TaskFromBCS
         private static bool ignoreCase;
         private static bool isGeneralStatistic;
 
-
+        /// <summary>
+        /// Метод, печатающий служебные сообщения в консоль. 
+        /// </summary>  
+        /// <param name="text">Текст сообщения</param>
+        /// <param name="color">Цвет сообщения</param>
         private static void ShowMessageBox(string text, ConsoleColor color = ConsoleColor.White)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(text);
             Console.ResetColor();
         }
-
+        /// <summary>
+        /// Метод, инициализирующий директорию с файлами для парсинга. 
+        /// </summary>  
+        /// <param name="pathToFolder">Директория для парсинга</param>
         private static void InitialSourceFilesDirectory(string pathToFolder)
         {
             if (Directory.Exists(pathToFolder))
@@ -40,6 +47,11 @@ namespace TaskFromBCS
             }
             else throw new ArgumentException("Указанная директория не существует", nameof(pathToFolder));
         }
+
+        /// <summary>
+        /// Метод, инициализирующий полный путь к файлу шаблону. 
+        /// </summary>  
+        /// <param name="fullFilename">Полное имя файла шаблона</param>
         private static void InitialKeyFullFilename(string fullFilename)
         {
             if (File.Exists(fullFilename))
@@ -50,6 +62,12 @@ namespace TaskFromBCS
             }
             else throw new ArgumentException("Файл по указанной дирректории не найден", nameof(fullFilename));
         }
+
+        /// <summary>
+        /// Метод, заполняющий лист стаистики вхождения слов для одного файла. 
+        /// </summary>  
+        /// <param name="sourceFiles">Данные с текущего считанного файла</param>
+        /// <param name="pathToTheComparedFile">Полное име текущего считанного файла</param>
         private static void CreateSingleStats(IEnumerable<string> sourceFiles, IWordComparator wordComparator, string pathToTheComparedFile)
         {
             for (int i = 0; i < patternParsingData.Count(); i++)
@@ -65,6 +83,11 @@ namespace TaskFromBCS
                 }
             }
         }
+
+        /// <summary>
+        /// Метод, заполняющий общий лист стаистики вхождения слов для всех файлов. 
+        /// </summary>  
+        /// <param name="wordStats">Список со списками статистик по всем файлам</param>
         private static void CreateGeneralStats(IEnumerable<IEnumerable<WordStats>> wordStats)
         {
             generalWordStats = new List<WordStats>(); ;
@@ -78,6 +101,9 @@ namespace TaskFromBCS
                 generalWordStats.Add(result);
             }
         }
+        /// <summary>
+        /// Метод, печатающий выбранную статистику в зависимости от выбранного типа формирования (общую или по файлам). 
+        /// </summary>
         private static void SelectOutputType(IWritable printer, bool typeStatistic)
         {
             if (typeStatistic)

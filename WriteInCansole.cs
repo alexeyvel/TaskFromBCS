@@ -4,8 +4,11 @@ using System.Linq;
 
 namespace TaskFromBCS
 {
+    /// <summary>
+    /// Класс выводящий данные статистики в консоль
+    /// </summary>
     class WriteInCansole : IWritable
-    {
+    {       
         public void WriteData(IEnumerable<WordStats> data)
         {
             int bufferSize = data.Count();

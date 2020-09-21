@@ -1,5 +1,8 @@
 ﻿namespace TaskFromBCS
 {
+    /// <summary>
+    /// Класс хранилище служебных сообщений в программе. 
+    /// </summary>
     static class AppMessages
     {
         public static readonly string greetingTile = "Здравствуйте, данное приложение считает количество вхождений" +

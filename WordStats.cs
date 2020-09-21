@@ -2,6 +2,9 @@
 
 namespace TaskFromBCS
 {
+    /// <summary>
+    /// Класс хранилище статистики вхождения слов в файле
+    /// </summary>
     class WordStats
     {
         private int count = 0;
